@@ -16,7 +16,7 @@ class Generator(nn.Module):
             nn.Linear(dimension_z, 256),
             nn.LeakyReLU(0.01),
             nn.Linear(256, image_dimension),
-            nn.tanH() # this normalizes inputs to range [-1,1] so output also be [-1, 1]
+            nn.Tanh() # this normalizes inputs to range [-1,1] so output also be [-1, 1]
         )
     def forward(self, x):
         return self.generator(x)
@@ -34,17 +34,17 @@ class Discriminator(nn.Module):
         return self.discriminator(x)
 
 # Model Hyperparameters
-#lr = 
-#epochs = 
-#device = 
-#dimension_z = 
-#image_dimension = 
-#batch_size = 
+lr =3e4 
+epochs = 50
+device = "cuda" if torch.cuda.is_available() else "cpu"
+dimension_z = 64
+image_dimension = 28*28*1
+batch_size = 32
 
-#generator = 
-#discriminator = 
-#fixed_znoise = 
-#transforms = 
+generator = Generator(dimension_z, image_dimension).to(device)
+discriminator = Discriminator(image_dimension).to(device) 
+#fixed_znoise = will add later. weird
+#transforms = will add later. weird
 
 
 
