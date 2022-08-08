@@ -9,12 +9,8 @@ import numpy as np
 import math
 
 
-
-
-
-
 class Generator(nn.Module):
-    def__init__(self, dimension_z, image_dimension):
+    def __init__(self, dimension_z, image_dimension):
         super().__init__()
         self.generator = nn.Sequential(
             nn.Linear(dimension_z, 256),
@@ -26,7 +22,7 @@ class Generator(nn.Module):
         return self.generator(x)
 
 class Discriminator(nn.Module):
-    def__init__(self, input_features):
+    def __init__(self, input_features):
         super().__init__()
         self.discriminator = nn.Sequential(
             nn.Linear(input_features, 128),
@@ -38,17 +34,17 @@ class Discriminator(nn.Module):
         return self.discriminator(x)
 
 # Model Hyperparameters
-lr = 
-epochs = 
-device = 
-dimension_z = 
-image_dimension = 
-batch_size = 
+#lr = 
+#epochs = 
+#device = 
+#dimension_z = 
+#image_dimension = 
+#batch_size = 
 
-generator = 
-discriminator = 
-fixed_znoise = 
-transforms = 
+#generator = 
+#discriminator = 
+#fixed_znoise = 
+#transforms = 
 
 
 
