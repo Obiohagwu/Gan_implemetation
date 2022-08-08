@@ -9,6 +9,10 @@ import numpy as np
 import math
 
 
+
+
+
+
 class Generator(nn.Module):
     def__init__(self, dimension_z, image_dimension):
         super().__init__()
@@ -32,6 +36,20 @@ class Discriminator(nn.Module):
         )
     def forward(self, x):
         return self.discriminator(x)
+
+# Model Hyperparameters
+lr = 
+epochs = 
+device = 
+dimension_z = 
+image_dimension = 
+batch_size = 
+
+generator = 
+discriminator = 
+fixed_znoise = 
+transforms = 
+
 
 
 def test():
