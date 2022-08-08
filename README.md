@@ -23,10 +23,7 @@ lets take a closer look into how these actually work.
 Generally speaking not every generative model makes use or is based on maximum likelihood estimations. But, today we are lookinga at GANs, and guess what? they do make use of MLEs! 
 MLEs are a subcompartment of the underlying mechanism of GANs. So what is an MLE? you could think of an MLE as a model that outputs an estimation of a probability distribution over a parameter denoted $\theta$ that maximizes the likelihood of a certain output y.
 Think of it as an argmax.
-<<<<<<< HEAD
-=======
+
 
 we can write the MLE as (no, I will not waste my time on writing latex!):
 <img width="321" alt="Screen Shot 2022-08-08 at 9 58 21 AM" src="https://user-images.githubusercontent.com/73560826/183435538-80275116-d18d-4633-8919-30c3f3259cdd.png">
-
->>>>>>> 0954be87340a41d0746553e5590793db63e18486
