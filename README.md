@@ -24,3 +24,5 @@ Generally speaking not every generative model makes use or is based on maximum l
 MLEs are a subcompartment of the underlying mechanism of GANs. So what is an MLE? you could think of an MLE as a model that outputs an estimation of a probability distribution over a parameter denoted \theta that maximizes the likelihood of a certain output y.
 Think of it as an argmax.
 
+we can write the MLE as:
+ \theta^* = 
