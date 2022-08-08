@@ -30,7 +30,12 @@ we can write the MLE as (no, I will not waste my time on writing latex!):
 
 By maximizing the likelihood of a model outputing the probability distribution over the parameter $\theta$ , we simultaneously minimize the KL (Kullback-Leibler) divergence between the data generator distribution and the model distribution, which is equivalent to maximizing the log-likelihood (loss?) of the training set.
 
+<<<<<<< HEAD
 
 ### A look at the taxonomy of deep generative models
+=======
+### A look at the taxonomy of deep generative models
+<img width="456" alt="Screen Shot 2022-08-08 at 10 12 11 AM" src="https://user-images.githubusercontent.com/73560826/183438280-0674df41-32aa-4d2e-bb6f-f00bc7e6dd6e.png">
+>>>>>>> refs/remotes/origin/main
 
 
