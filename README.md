@@ -26,9 +26,10 @@ Think of it as an argmax.
 
 
 we can write the MLE as (no, I will not waste my time on writing latex!):
-<img width="321" alt="Screen Shot 2022-08-08 at 9 58 21 AM" src="https://user-images.githubusercontent.com/73560826/183435538-80275116-d18d-4633-8919-30c3f3259cdd.png">
-
-By maximizing the likelihood of a model outputing the probability distribution over the parameter $\theta$ , we simultaneously minimize the KL (Kullback-Leibler) divergence between the data generator distribution and the model distribution, which is equivalent to maximizing the log-likelihood (loss?) of the training set.
+<p align="center">
+    <img width="321" alt="Screen Shot 2022-08-08 at 9 58 21 AM" src="https://user-images.githubusercontent.com/73560826/183435538-80275116-d18d-4633-8919-30c3f3259cdd.png">
+</p>
+By maximizing the likelihood of a model outputing the probability distribution over the parameter $\theta$ , we simultaneously minimize the KL (Kullback-Leibler) divergence (kl divergence is just a quasi distance measures between probability distributions. Based on entropic load difference between distribution P and reference distribution Q. ie, a relative entropy of 0 indicated the two distributions in question have indentical quantities of information. KL divergence is just the average difference in the number of bits required to encode samples of P, using code optimized for Q rather than one optimized for P) between the data generator distribution and the model distribution, which is equivalent to maximizing the log-likelihood (loss?) of the training set.
 
 
 ### A look at the taxonomy of deep generative models
@@ -36,4 +37,5 @@ Here is an illustration of the taxonomy of generative models. The aim is to gain
 <img width="456" alt="Screen Shot 2022-08-08 at 10 12 11 AM" src="https://user-images.githubusercontent.com/73560826/183438280-0674df41-32aa-4d2e-bb6f-f00bc7e6dd6e.png">
 
 
+### Variational(deterministic) vs Markov Chain apps(stochastic)
 
