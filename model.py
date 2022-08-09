@@ -43,8 +43,31 @@ batch_size = 32
 
 generator = Generator(dimension_z, image_dimension).to(device)
 discriminator = Discriminator(image_dimension).to(device) 
-#fixed_znoise = will add later. weird
-#transforms = will add later. weird
+fixed_znoise = torch.randn((batch_size, dimension_z)).to(device)
+transfomation = transforms.Compose(
+    [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),]
+)
+
+generator_optimizer = optim.Adam(discriminator.parameters(), lr=lr)
+discriminator_optimizer = optim.Adam(generator.parameters(), lr=lr)
+dataset = datasets.MNIST(root="data", download=True, transform=transformations)
+dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+loss_criterion = nn.BCELoss()
+
+iteration = 0
+for epoch in range(epochs):
+    for batch_idx, (real, _) in enumerate(dataloader):
+        real = real.view(-1, 784).to(device)
+        batch_size = real.shape[0]
+
+        #Now we train the discriminator. Refering to paper
+        # We want to get the max over this distribution log(D(x)) + log(1-D(G(Z)))
+        admul_noise = torch.randn(batch_size, dimension_z).to(device)
+        forged = generator(admul_noise)
+        ground_discriminator = discriminator(real).view(-1)
+        ground_discriminatorLoss = loss_criterion(ground_discriminator, torch.ones_like(ground_discriminator))
+        discriminator_forged = discriminator(forged).view(-1)
+        
 
 
 
